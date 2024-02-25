@@ -1,0 +1,33 @@
+.incredecre{
+    border: 2px solid red;
+}
+
+#price{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-right: 15px;
+}
+
+#itemtitle{
+    padding-left: 15px;
+}
+
+.countdiv{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-right: 7%;
+}
+
+#counting{
+    margin-top: 3%;
+}
+
+#totalprice{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 7%;
+    padding-right: 11px;
+}

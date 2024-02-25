@@ -1,0 +1,42 @@
+*{
+    font-family: 'Comfortaa', cursive;
+}
+
+.mainnav{
+    padding: 0;
+}
+
+.mainnavbar{
+    background: rgb(160,242,156);
+    background: linear-gradient(90deg, rgba(160,242,156,1) 0%, rgba(231,219,88,1) 0%, rgba(160,242,156,1) 100%);
+}
+
+.brandname{
+    color: rgb(5, 79, 5);
+}
+
+.featuresdiv{
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.homeli{
+    padding-right: 45px;
+}
+
+.featuresli{
+    padding-right: 20px;
+}
+
+i.fa-regular{
+    font-family: fontawesome !important;
+    font-size: 30px;
+    padding-right: 60px;
+    padding-top: 9px;
+}
+
+#cartvalue{
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 50%;
+}
