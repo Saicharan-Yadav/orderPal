@@ -43,7 +43,7 @@ function App() {
             />
           }
         />
-        <Route path="/recent" element={<RecentOrders />} />
+        <Route path="recent" element={<RecentOrders />} />
       </Routes>
     </>
   );
