@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./CSS/Header.css";
 import Logo from "./IMAGES/order.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = ({ cartValue, getCartValue }) => {
   useEffect(() => {
@@ -16,9 +16,9 @@ const Header = ({ cartValue, getCartValue }) => {
           alt="logo"
           style={{ height: "80px", width: "100px" }}
         ></img>
-        <a className="navbar-brand brandname" href="/">
+        <Link className="navbar-brand brandname" to="/">
           OrderPal
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -43,18 +43,18 @@ const Header = ({ cartValue, getCartValue }) => {
 
           <ul className="navbar-nav">
             <li className="nav-item homeli">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item featuresli">
-              <a
+              <Link
                 className="nav-link"
-                href="/recentpage"
+                to="/recentpage"
                 style={{ color: "black" }}
               >
                 Recent Orders
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
