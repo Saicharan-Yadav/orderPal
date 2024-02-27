@@ -6,6 +6,7 @@ import "./CSS/CartPage.css";
 
 const RecentOrders = () => {
   const [recentOrder, setRecentOrder] = useState([]);
+
   useEffect(() => {
     const unsub = onSnapshot(collection(db, "orders_data"), (snapshot) => {
       setRecentOrder(
