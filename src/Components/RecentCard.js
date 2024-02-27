@@ -13,7 +13,7 @@ const RecentCard = ({ item }) => {
 
   return (
     <>
-      {console.log("in rece")}
+      {console.log("in recent card")}
 
       <>
         {/* <div>

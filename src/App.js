@@ -33,7 +33,8 @@ function App() {
           }
         />
         <Route
-          path="cartpage"
+          exact
+          path="/cartpage"
           element={
             <CartPage
               finalCartItems={finalCartItems}
@@ -43,7 +44,7 @@ function App() {
             />
           }
         />
-        <Route path="recent" element={<RecentOrders />} />
+        <Route exact path="/recent" element={<RecentOrders />} />
       </Routes>
     </>
   );
