@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { onSnapshot, collection, addDoc, doc } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
 import db from "./firebase/firebase";
 import RecentCard from "./RecentCard";
 import "./CSS/CartPage.css";
@@ -26,6 +26,7 @@ const RecentOrders = () => {
 
   return (
     <>
+      {console.log("in recentOrder")}
       <div>
         <div>
           <h2 className="yourcart">Recent Orders</h2>

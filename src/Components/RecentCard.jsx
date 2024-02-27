@@ -13,6 +13,8 @@ const RecentCard = ({ item }) => {
 
   return (
     <>
+      {console.log("in rece")}
+
       <>
         {/* <div>
         <div>
@@ -45,16 +47,20 @@ const RecentCard = ({ item }) => {
         </div>
 
         <table>
-          <tr>
-            <th>Item</th>
-            <th>Price</th>
-          </tr>
-          {arr.map((it, index) => (
-            <tr key={index}>
-              <td>{it.title}</td>
-              <td>{"₹" + it.price}</td>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {arr.map((it, index) => (
+              <tr key={index}>
+                <td>{it.title}</td>
+                <td>{"₹" + it.price}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
 
         <h5 id="totalprice">Total price ₹{item.totalPrice}</h5>
