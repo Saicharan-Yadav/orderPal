@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CartPageCard from "./CartPageCard";
 import "./CSS/CartPage.css";
 import TotalItemsCost from "./TotalItemsCost";
-import Header from "./Header";
 
 const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
   const [quantity, setQuantity] = useState(cartValue);
@@ -24,6 +23,7 @@ const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
       document.body.classList.remove("cartpagemaindiv");
     };
   });
+
   return (
     <>
       <div>
@@ -48,6 +48,7 @@ const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
             cartValue={cartValue}
             quantity={quantity}
             cost={cost}
+            finalCartItems={finalCartItems}
           />
         </div>
       </div>
