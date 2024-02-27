@@ -48,7 +48,11 @@ const Header = ({ cartValue, getCartValue }) => {
               </a>
             </li>
             <li className="nav-item featuresli">
-              <a className="nav-link" href="/recent" style={{ color: "black" }}>
+              <a
+                className="nav-link"
+                href="/recentpage"
+                style={{ color: "black" }}
+              >
                 Recent Orders
               </a>
             </li>
