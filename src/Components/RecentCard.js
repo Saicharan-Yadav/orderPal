@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CSS/CartPageCard.css";
 import { doc, deleteDoc } from "firebase/firestore";
 import db from "./firebase/firebase";
 
-const RecentCard = ({ item }) => {
+const RecentCard = ({ item, setTotalPrice }) => {
   const arr = [...item.order];
   const deleteFn = async () => {
     console.log("delte sUCESSFULLY");
     const docRef = doc(db, "orders_data", item.id);
     await deleteDoc(docRef);
   };
+
+  useEffect(() => {
+    setTotalPrice((prev) => prev + item.totalPrice);
+  }, []);
 
   return (
     <>

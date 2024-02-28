@@ -1,9 +1,41 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import CartPage from "./Components/CartPage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink } from "react-router-dom";
+
 import HomePage from "./Components/HomePage";
 import RecentOrders from "./Components/RecentOrders";
 
+function NotFound() {
+  const containerStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+
+  const headingStyle = {
+    margin: "0",
+  };
+
+  const iconStyle = {
+    marginRight: "8px",
+    listStyle: "none",
+  };
+  return (
+    <div>
+      <div style={containerStyle}>
+        <h2 className="yourcart" style={headingStyle}>
+          <NavLink to="/">
+            <FontAwesomeIcon style={iconStyle} icon={faHome} />
+          </NavLink>
+          404 Not Found
+        </h2>
+      </div>
+    </div>
+  );
+}
 function App() {
   const [finalCartItems, setFinalCartItems] = useState([]);
 
@@ -45,6 +77,7 @@ function App() {
           }
         />
         <Route exact path="/recentpage" element={<RecentOrders />} />
+        <Route exact path="*" element={<NotFound />} />
       </Routes>
     </>
   );

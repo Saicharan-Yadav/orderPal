@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import CartPageCard from "./CartPageCard";
+import { onSnapshot, collection } from "firebase/firestore";
+import db from "./firebase/firebase";
+import RecentCard from "./RecentCard";
 import "./CSS/CartPage.css";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import TotalItemsCost from "./TotalItemsCost";
 
-const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
-  const [quantity, setQuantity] = useState(cartValue);
+const RecentOrders = () => {
+  const [totalPrice, setTotalPrice] = useState(0);
   const containerStyle = {
     display: "flex",
     justifyContent: "space-between",
@@ -30,16 +31,16 @@ const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
     marginRight: "8px",
     listStyle: "none",
   };
+  const [recentOrder, setRecentOrder] = useState([]);
 
-  const setIncrement = (incre) => {
-    incre === true
-      ? setQuantity((prevValue) => prevValue + 1)
-      : setQuantity((prevValue) => prevValue - 1);
-  };
-
-  const getTotalCost = (cost) => {
-    setCost(cost);
-  };
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, "orders_data"), (snapshot) => {
+      setRecentOrder(
+        snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    });
+    return unsub;
+  }, []);
 
   useEffect(() => {
     document.body.classList.add("cartpagemaindiv");
@@ -51,39 +52,40 @@ const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
 
   return (
     <>
+      {console.log("in recentOrder")}
       <div>
         <div style={containerStyle}>
           <h2 className="yourcart" style={headingStyle}>
             <NavLink to="/">
               <FontAwesomeIcon style={iconStyle} icon={faHome} />
             </NavLink>
-            Your Cart
+            Recent Orders
           </h2>
+          <div
+            style={{
+              marginRight: "15px",
+            }}
+          >
+            <h5 className={totalprice}>Total price : ₹ {totalPrice}</h5>
+          </div>
         </div>
 
         <div className="cart">
-          <div className="row" id="cartitems">
-            {finalCartItems.map((item) => (
-              <CartPageCard
-                item={item}
-                key={item.id}
-                setIncrement={setIncrement}
-                getTotalCost={getTotalCost}
-                cost={cost}
-              />
-            ))}
+          <div className="row" id="cartitems1">
+            {recentOrder.map((item) => {
+              return (
+                <RecentCard
+                  key={item.totalPrice}
+                  item={item}
+                  setTotalPrice={setTotalPrice}
+                />
+              );
+            })}
           </div>
-
-          <TotalItemsCost
-            cartValue={cartValue}
-            quantity={quantity}
-            cost={cost}
-            finalCartItems={finalCartItems}
-          />
         </div>
       </div>
     </>
   );
 };
 
-export default CartPage;
+export default RecentOrders;
