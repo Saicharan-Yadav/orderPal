@@ -15,6 +15,7 @@ const HomeBody = ({ getTheCartValue, getTheItems, setCost }) => {
   useEffect(() => {
     getTheCartValue(cartValue);
     getTheItems(itemsArray);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartValue]);
 
   async function searchItems() {

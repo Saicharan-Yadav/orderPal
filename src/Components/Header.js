@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./CSS/Header.css";
 import Logo from "./IMAGES/order.png";
-import { Link, NavLink } from "react-router-dom";
 
 const Header = ({ cartValue, getCartValue }) => {
   useEffect(() => {
     getCartValue(cartValue);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartValue]);
 
   return (

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import CartPageCard from "./CartPageCard";
-import "./CSS/CartPage.css";
-import { Link, NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./CSS/CartPage.css";
+import CartPageCard from "./CartPageCard";
 import TotalItemsCost from "./TotalItemsCost";
 
 const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
@@ -12,14 +12,6 @@ const CartPage = ({ finalCartItems, cartValue, setCost, cost }) => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-  };
-  const totalprice = {
-    display: "flex",
-    textAlign: "center",
-    justifyContent: "center",
-    marginTop: "7%",
-    paddingRight: "11px",
-    marginRight: "10px",
   };
 
   const headingStyle = {

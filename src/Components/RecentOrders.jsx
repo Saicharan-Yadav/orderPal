@@ -3,7 +3,7 @@ import { onSnapshot, collection } from "firebase/firestore";
 import db from "./firebase/firebase";
 import RecentCard from "./RecentCard";
 import "./CSS/CartPage.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 

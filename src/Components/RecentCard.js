@@ -13,6 +13,7 @@ const RecentCard = ({ item, setTotalPrice }) => {
 
   useEffect(() => {
     setTotalPrice((prev) => prev + item.totalPrice);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

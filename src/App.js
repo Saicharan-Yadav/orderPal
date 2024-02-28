@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import CartPage from "./Components/CartPage";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
+import CartPage from "./Components/CartPage";
 
 import HomePage from "./Components/HomePage";
 import RecentOrders from "./Components/RecentOrders";

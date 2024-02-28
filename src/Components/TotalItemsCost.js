@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./CSS/TotalItemsCost.css";
-import { onSnapshot, collection, addDoc, doc } from "firebase/firestore";
 import db from "./firebase/firebase";
 
 const TotalItemsCost = ({ cartValue, quantity, cost, finalCartItems }) => {
@@ -20,13 +20,6 @@ const TotalItemsCost = ({ cartValue, quantity, cost, finalCartItems }) => {
       navigate("/");
     }
   };
-
-  // useEffect(() => {
-  //   const unsub = onSnapshot(collection(db, "orders"), (snapshot) => {
-  //     console.log(snapshot.docs.map((doc) => doc.data()));
-  //   });
-  //   return unsub;
-  // }, []);
 
   return (
     <>
